@@ -23,7 +23,8 @@ services:
         MYSQL_ROOT_PASSWORD: root
       volumes:
         - /tmp/:/tmp/
-        - ./data/mysql/data:/var/lib/mysql
+      # 关闭，如有需要，请自行开启，但是必须要删除 ./data/mysql/data 的 README.md 文件，否则报错
+      #  - ./data/mysql/data:/var/lib/mysql
       networks:
                   cfarr:
                       aliases:
