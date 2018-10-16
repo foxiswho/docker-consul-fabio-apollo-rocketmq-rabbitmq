@@ -172,17 +172,17 @@ services:
     - ./data/apollo:/opt
     environment:
       # 开启Portal,默认端口: 8070
-      PORTAL_DB: jdbc:mysql://mysql:3306/ApolloPortalDB?characterEncoding=utf8mb4
+      PORTAL_DB: jdbc:mysql://mysql:3306/ApolloPortalDB?characterEncoding=utf8
       PORTAL_DB_USER: root
       PORTAL_DB_PWD: root
 
       # 开启dev环境, 默认端口: config 8080, admin 8090
-      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDBDev?characterEncoding=utf8mb4
+      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDBDev?characterEncoding=utf8
       DEV_DB_USER: root
       DEV_DB_PWD: root
 
       # 开启fat环境, 默认端口: config 8081, admin 8091
-      #FAT_DB: jdbc:mysql://mysql:3306/ApolloConfigDBFat?characterEncoding=utf8mb4
+      #FAT_DB: jdbc:mysql://mysql:3306/ApolloConfigDBFat?characterEncoding=utf8
       #FAT_DB_USER: root
       #FAT_DB_PWD: toor
       # 可修改端口.
