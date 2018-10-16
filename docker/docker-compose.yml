@@ -154,25 +154,6 @@ services:
       depends_on:
       - consulServer1
 
-#  fabio:
-#    image: magiconair/fabio
-##    container_name: fabio
-#    hostname: fabio
-#    ports:
-#      - "9998:9998"
-#      - "9999:9999"
-#    volumes:
-#      - ./data/fabio/fabio.properties:/etc/fabio/fabio.properties
-#    networks:
-#      cfarr:
-#        aliases:
-#        - fabio
-#      cfarr-c:
-#        ipv4_address: 10.2.1.110
-#        aliases:
-#        - fabio
-#      depends_on:
-#      - consulServer1
   apollo:
     image: foxiswho/docker-apollo:latest
     container_name: apollo
@@ -191,17 +172,17 @@ services:
     - ./data/apollo:/opt
     environment:
       # 开启Portal,默认端口: 8070
-      PORTAL_DB: jdbc:mysql://mysql:3306/ApolloPortalDB?characterEncoding=utf8
+      PORTAL_DB: jdbc:mysql://mysql:3306/ApolloPortalDB?characterEncoding=utf8mb4
       PORTAL_DB_USER: root
       PORTAL_DB_PWD: root
 
       # 开启dev环境, 默认端口: config 8080, admin 8090
-      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDBDev?characterEncoding=utf8
+      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDBDev?characterEncoding=utf8mb4
       DEV_DB_USER: root
       DEV_DB_PWD: root
 
       # 开启fat环境, 默认端口: config 8081, admin 8091
-      #FAT_DB: jdbc:mysql://mysql:3306/ApolloConfigDBFat?characterEncoding=utf8
+      #FAT_DB: jdbc:mysql://mysql:3306/ApolloConfigDBFat?characterEncoding=utf8mb4
       #FAT_DB_USER: root
       #FAT_DB_PWD: toor
       # 可修改端口.
