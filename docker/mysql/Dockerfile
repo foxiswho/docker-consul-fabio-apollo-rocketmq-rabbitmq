@@ -1,4 +1,5 @@
-FROM mysql:8.0
+FROM mariadb:10.3
+#FROM mysql:8.0
 
 RUN rm -rf /etc/localtime \
 && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
