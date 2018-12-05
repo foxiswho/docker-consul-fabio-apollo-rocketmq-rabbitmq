@@ -15,10 +15,12 @@ docker-compose up
 ```
 
 
-# 数据库 默认用户名和密码
-root
+# mysql 数据库 默认用户名和密码
 
-root
+账号/密码：root/root
+
+端口：3600
+
 
 # apollo 分布式配置中心
 如果要使用，请先 创建几个数据库 ，打开如下链接 创建数据库
@@ -40,8 +42,18 @@ https://github.com/ctripcorp/apollo
 http://localhost:8070
 ```
 
+# rocketmq console 控制台
+端口：8180
 
+```SHELL
+http://localhost:8180
+```
+# consul 管理中心
+端口：8500
 
+```SHELL
+http://localhost:8500
+```
 
 
 
