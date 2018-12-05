@@ -187,7 +187,7 @@ services:
       PORTAL_DB_PWD: root
 
       # 开启dev环境, 默认端口: config 8080, admin 8090
-      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDBDev?characterEncoding=utf8
+      DEV_DB: jdbc:mysql://mysql:3306/ApolloConfigDB?characterEncoding=utf8
       DEV_DB_USER: root
       DEV_DB_PWD: root
 

@@ -3,7 +3,10 @@ docker-consul-fabio-apollo-rocketmq-rabbitmq
 
 
 # 环境说明
-系统 MAC 系统
+第一次 `docker-compose up`时候，
+`apollo`容器是无法启动成功的，
+需要你根据下面的步骤把 `scripts/sql`下的2个SQL文件导入到数据库中，
+导入完成后，自动创建`ApolloPortalDB`，`ApolloConfigDB`库，这时候再启动 `apollo` 容器，即可成功
 
 
 
@@ -24,8 +27,9 @@ docker-compose up
 
 # apollo 分布式配置中心
 如果要使用，请先 创建几个数据库 ，打开如下链接 创建数据库
-
+```angular2html
 https://github.com/ctripcorp/apollo/tree/master/scripts/sql
+```
 
 数据库库指导  https://github.com/ctripcorp/apollo/wiki/分布式部署指南#21-创建数据库
 
