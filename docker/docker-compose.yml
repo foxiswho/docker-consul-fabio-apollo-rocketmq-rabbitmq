@@ -31,7 +31,16 @@ services:
                   cfarr:
                       aliases:
                         - mysql
-
+  adminer:
+    image: adminer
+    container_name: cfarrMysqlAdminer
+    #restart: always
+    ports:
+    - 3300:8080
+    networks:
+      cfarr:
+        aliases:
+        - adminer
   redis:
       image: redis:latest
       #build: ./redis

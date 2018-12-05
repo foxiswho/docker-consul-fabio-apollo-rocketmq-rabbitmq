@@ -60,6 +60,26 @@ http://localhost:8500
 ```
 
 
+# 数据库管理
+```SHELL
+http://localhost:3300
+```
+参数填写说明
+>`服务器`: mysql
+>                 这里的mysql是容器虚拟host，你也可以填写IP地址
+>`用户名`: admin
+>`密码`: admin
+>`数据库`: 可以为空
+
+## FAQ 报错
+SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client
+解决：用其他数据库管理软件，到数据库命令行格式下，执行如下命令。创建新用户`admin`,使用新用户和密码登录即可成功
+
+```SQL
+CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'admin';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
+```
 
 
 
