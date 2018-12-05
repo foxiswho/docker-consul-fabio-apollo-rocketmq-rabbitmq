@@ -3,6 +3,7 @@ version: '3.5'
 services:
 #  nginx:
 #      build: ./nginx
+#      container_name: cfarrNginx
 #      ports:
 #        - "80:80"
 #      volumes:
@@ -17,6 +18,7 @@ services:
   mysql:
       build: ./mysql
       hostname: mysql
+      container_name: cfarrMysql
       ports:
         - "3306:3306"
       environment:
@@ -32,10 +34,14 @@ services:
 
   redis:
       image: redis:latest
+      #build: ./redis
+      container_name: cfarrRedis
       ports:
         - "6379:6379"
-#      volumes:
+      command: redis-server /usr/local/etc/redis/redis.conf
+      volumes:
 #        - /Users/:/Users/
+         - ./redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
       networks:
                   cfarr:
                       aliases:
@@ -90,6 +96,7 @@ services:
 
   consulServer1:
       image: consul
+      container_name: consul1
       command: consul agent -server -bind=10.2.1.101 -node=consulServer1 -bootstrap-expect=3 -data-dir /tmp/consul -client 0.0.0.0
       environment:
       - 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'
@@ -104,6 +111,7 @@ services:
 
   consulServer2:
       image: consul
+      container_name: consul2
       command: consul agent -server -bind=10.2.1.102 -node=consulServer2 -join 10.2.1.101 -data-dir /tmp/consul
       environment:
       - 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'
@@ -120,6 +128,7 @@ services:
 
   consulServer3:
       image: consul
+      container_name: consul3
       command: consul agent -server -bind=10.2.1.103 -node=consulServer3 -join 10.2.1.101 -data-dir /tmp/consul
       environment:
       - 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'
@@ -136,6 +145,7 @@ services:
 
   consulManger:
       image: consul
+      container_name: consulManger
       command: consul agent -bind=10.2.1.100 -node=mangaer -join 10.2.1.101 -data-dir /tmp/consul -config-dir /consul/config -client 0.0.0.0 -ui
       ports:
       - "8500:8500"
