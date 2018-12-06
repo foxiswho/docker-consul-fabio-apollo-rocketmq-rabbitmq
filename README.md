@@ -52,13 +52,14 @@ http://localhost:8070
 ```SHELL
 http://localhost:8180
 ```
-# consul 管理中心
+## consul 管理中心
 端口：8500
 
 ```SHELL
 http://localhost:8500
 ```
-
+## rocketmq No route info of this topic
+原因 Broker禁止自动创建Topic，且用户没有通过手工方式创建Topic，请自行创建 topic
 
 # 数据库管理
 ```SHELL
