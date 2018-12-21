@@ -22,7 +22,7 @@ docker-compose up
 
 账号/密码：root/root
 
-端口：3600
+端口：3306
 
 
 # apollo 分布式配置中心
